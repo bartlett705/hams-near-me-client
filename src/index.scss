@@ -1,0 +1,30 @@
+body {
+  background-color: lightsteelblue;
+  font-family: 'Roboto', fixed-width;
+}
+
+h2 {
+  margin: 0.5rem;
+}
+
+h6 {
+  margin: 0.25rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hammer-table {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.errors {
+  background-color: lightslategray;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "target": "es5",
+    "types": ["cypress"]
+  },
+
+  "exclude": ["node_modules", "build", "scripts", "webpack", "jest"]
+}

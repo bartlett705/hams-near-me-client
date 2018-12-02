@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Hams near me</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <% if (htmlWebpackPlugin.options.env === 'staging') { %>
+    <script>
+      window.env = 'staging'
+    </script>
+    <% } else { %>
+    <script>
+      window.env = 'production'
+    </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!--
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-129773171-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'UA-129773171-1')
+    </script>
+  -->
+</html>
