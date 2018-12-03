@@ -73,7 +73,7 @@ class HammerSearch extends React.Component {
     }
 
     this.setState({ inputError: false })
-    let fetchError = 'Error fetching Hams 😭'
+    let fetchError = 'Error fetching Hams :,('
     try {
       const res = await fetchHams(this.state.value)
       if (res.status === 200) {
@@ -81,7 +81,7 @@ class HammerSearch extends React.Component {
         this.setState({ hammers, fetchError: undefined })
         return
       } else if (res.status === 429) {
-        fetchError = 'Slow down, cowboy 😜'
+        fetchError = 'Slow down, cowboy ;P'
       } else if (res.status === 422) {
         fetchError = (await res.json()).errMessage
       }
@@ -96,7 +96,7 @@ class HammerSearch extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
 
 const fetchHams = async (zip: string) => {
-  return fetch('http://localhost:7341', {
+  return fetch('/api', {
     body: JSON.stringify({ zip }),
     headers: {
       'Content-Type': 'application/json'

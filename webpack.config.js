@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const devMode = process.env.NODE_ENV !== 'production'
 const CleanWebPackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 const webpack = require('webpack')
 
 const plugins = [
@@ -17,7 +19,8 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: path.resolve(__dirname, 'index.html'),
     env: process.env.NODE_ENV
-  })
+  }),
+  new CopyWebpackPlugin(['./public'])
 ]
 module.exports = {
   mode: devMode ? 'development' : 'production',
