@@ -1,8 +1,10 @@
 body {
   background-color: lightsteelblue;
   font-family: 'Roboto', fixed-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 h2 {
   margin: 0.5rem;
 }
@@ -11,10 +13,17 @@ h6 {
   margin: 0.25rem;
 }
 
-main {
+main,
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 1rem;
 }
 
 .hammer-table {

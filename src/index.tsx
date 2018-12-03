@@ -3,11 +3,20 @@ import * as ReactDOM from 'react-dom'
 import './index.scss'
 
 const App = () => (
-  <main>
-    <h2>Enter a zip code to find some Hams!</h2>
-    <h6>To narrow to Zip+4, omit the dash (e.g. 920563043)</h6>
-    <HammerSearch />
-  </main>
+  <>
+    <header>
+      <h2>Enter a zip code to find some Hams!</h2>
+    </header>
+    <main>
+      <h6>To narrow to Zip+4, omit the dash (e.g. 920563043)</h6>
+      <HammerSearch />
+    </main>
+    <footer>
+      <div>
+        [ <a href="/about.html">about</a> ]
+      </div>
+    </footer>
+  </>
 )
 
 interface Hammer {

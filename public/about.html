@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Hams 📻 near 📡 me : About</title>
+    <link rel="icon" type="image/ico" href="/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      background-color: lightsteelblue;
+      font-family: 'Roboto', fixed-width;
+    }
+
+    h2 {
+      margin: 0.5rem;
+    }
+
+    header, main, footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        padding-bottom: 1rem;
+    }
+
+    p {
+      max-width: 25rem;
+    }
+  </style>
+  <body>
+    <header><h2>Thanks for visiting Hams Near Me</h2></header>
+    <main>
+      <p>
+        This site is run by a guy named Ahmad. I made it over a rainy weekend -
+        hope it's useful, or at least a little fun. The database backing it was
+        parsed, by me, from the FCC's publicly-available
+        <a
+          href="http://wireless.fcc.gov/uls/index.htm?job=transaction&page=weekly"
+          >ULS database</a
+        >.
+      </p>
+      <p>
+        You can find the script I used to do that, and the software for the
+        server
+        <a href="https://github.com/bartlett705/hams-near-me-server">here</a>.
+      </p>
+      <p>
+        The server runs on a <a href="https://lowendbox.com/">low-end-box</a> in
+        Los Angeles, I think. Over-wrought stack:
+      </p>
+
+      <ul>
+        <li>Postgres</li>
+        <li>Koa</li>
+        <li>Typescript</li>
+        <li>React</li>
+        <li>SCSS</li>
+      </ul>
+      <footer>
+        <div>
+          [ <a href="/index.html">back</a> ]</footer>
+        </div>
+    </main>
+  </body>
+  <!-- 🙈 -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-129773171-2"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'UA-129773171-2')
+  </script>
+</html>
