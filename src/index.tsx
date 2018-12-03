@@ -73,6 +73,8 @@ class HammerSearch extends React.Component {
         return
       } else if (res.status === 429) {
         fetchError = 'Slow down, cowboy 😜'
+      } else if (res.status === 422) {
+        fetchError = (await res.json()).errMessage
       }
     } catch (err) {
       // tslint:disable-next-line:no-console
@@ -85,7 +87,7 @@ class HammerSearch extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
 
 const fetchHams = async (zip: string) => {
-  return fetch('http://localhost:7337', {
+  return fetch('http://localhost:7341', {
     body: JSON.stringify({ zip }),
     headers: {
       'Content-Type': 'application/json'
