@@ -13,6 +13,13 @@ it('renders an input and button', () => {
   getByText(/search/i)
 })
 
+it('renders an about link', () => {
+  const { getByText } = render(<App />)
+  const link = getByText(/about/i)
+  expect(link.hasAttribute('href'))
+  expect(link.getAttribute('href')).toBe('/about.html')
+})
+
 it('submits on clicking search and show loading state', () => {
   const { getByLabelText, getByText } = render(<App />)
   global.fetch = jest.fn()
@@ -70,7 +77,7 @@ it('validates non numerical input', () => {
 })
 
 it('shows error if non-200 is received', async () => {
-  const { getByLabelText, getByText, debug } = render(<App />)
+  const { getByLabelText, getByText } = render(<App />)
   global.fetch = jest.fn(() => Promise.resolve({ status: 400 }))
 
   const input = getByLabelText(/zip code/i)
@@ -83,7 +90,7 @@ it('shows error if non-200 is received', async () => {
 })
 
 it('shows message if 429 is received', async () => {
-  const { getByLabelText, getByText, debug } = render(<App />)
+  const { getByLabelText, getByText } = render(<App />)
   global.fetch = jest.fn(() => Promise.resolve({ status: 429 }))
 
   const input = getByLabelText(/zip code/i)
@@ -96,7 +103,7 @@ it('shows message if 429 is received', async () => {
 })
 
 it('displays fetched data on success', async () => {
-  const { getByLabelText, getByText, debug } = render(<App />)
+  const { getByLabelText, getByText } = render(<App />)
   global.fetch = jest.fn(() =>
     Promise.resolve({
       json: () =>
