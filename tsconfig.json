@@ -7,8 +7,8 @@
     "noImplicitThis": true,
     "sourceMap": true,
     "target": "es5",
-    "types": ["cypress"]
+    "types": ["jest", "cypress"]
   },
 
-  "exclude": ["node_modules", "build", "scripts", "webpack", "jest"]
+  "exclude": ["node_modules", "build", "scripts", "test"]
 }

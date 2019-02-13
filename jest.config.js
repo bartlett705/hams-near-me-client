@@ -1,10 +1,11 @@
 module.exports = {
+  preset: 'ts-jest',
   collectCoverageFrom: ['src/**/*.tsx'],
-  roots: ['<rootDir>/src'],
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/test/__mocks__/fileMock.js',
+    '\\.(s?css)$': '<rootDir>/test/__mocks__/styleMock.js'
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  roots: ['<rootDir>/src'],
   setupTestFrameworkScriptFile: './test/setup.ts'
 }

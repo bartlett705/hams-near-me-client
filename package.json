@@ -1,6 +1,6 @@
 {
   "name": "hams-near-me-client",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Client for hams near me :)",
   "main": "index.tsx",
   "author": "kk6zkl",
@@ -9,13 +9,11 @@
     "build": "NODE_ENV=production webpack",
     "start": "webpack-dev-server",
     "test": "jest --watch",
-    "deploy": "npm run build && scp -p 5235 -i ci/travis_ci_rsa build/*.* travis@mosey.systems:/var/www/hams-near-me-client/build"
+    "deploy": "npm run-script build && scp -P 5235 build/*.* ahmad@mosey.systems:/var/www/hams-near-me/client/build"
   },
   "dependencies": {
-    "@types/dotenv": "^4.0.3",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.7",
-    "date-fns": "^2.0.0-alpha.25",
     "dotenv": "^6.1.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
@@ -31,19 +29,17 @@
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^3.0.1",
+    "@types/dotenv": "^4.0.3",
     "@types/jest": "^23.3.9",
-    "@types/jest-axe": "^2.2.2",
     "@types/react-dom": "^16.0.7",
     "copy-webpack-plugin": "^4.6.0",
     "cypress": "^3.1.2",
     "jest": "^23.6.0",
-    "jest-axe": "^3.1.0",
     "prettier": "^1.14.3",
     "react-testing-library": "^5.2.3",
     "style-loader": "^0.19.0",
     "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
-    "webpack-dev-server": "^3.1.8",
-    "motd": "*"
+    "webpack-dev-server": "^3.1.14"
   }
 }
