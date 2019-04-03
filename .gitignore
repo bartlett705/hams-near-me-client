@@ -17,7 +17,7 @@ node_modules/
 src/config.ts
 secrets.tar
 travis.log
-ci/travis_ci_rsa
+ci/travis*
 
 # Testing
 coverage
