@@ -1,5 +1,5 @@
 workflow "Test, build, deploy on push" {
-  resolves = ["Notify Start", "Notify End"]
+  resolves = ["Notify Start", "Notify Deploy End", "Notify Test End"]
   on = "push"
 }
 
@@ -21,7 +21,7 @@ action "Unit Tests" {
 }
 
 action "Master" {
-  needs = "Unit Tests"
+  needs = ["Unit Tests"]
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
@@ -41,7 +41,7 @@ action "Notify Deploy End" {
 }
 
 action "Not Master" {
-  needs = "Unit Tests"
+  needs = ["Unit Tests"]
   uses = "actions/bin/filter@master"
   args = "not branch master"
 }
