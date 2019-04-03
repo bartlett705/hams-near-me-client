@@ -10,5 +10,5 @@ npm run build \
   && echo "Copying Dist Pkg to remote host..." \
   && scp -v -P 5235 -i ci/travis_id_rsa -o UserKnownHostsFile=ci/known_hosts build/. travis@mosey.systems:/var/www/hams-near-me/client/build \
   && echo "Cleaning up..." \
-  && rm -rf build ci/travis_id_rsa \
+  && rm -rf build ci \
   && echo Done!;
