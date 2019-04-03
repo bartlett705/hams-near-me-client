@@ -46,9 +46,9 @@ action "Not Master" {
   args = "not branch master"
 }
 
-action "Notify End" {
+action "Notify Test End" {
   uses = "swinton/httpie.action@8ab0a0e926d091e0444fcacd5eb679d2e2d4ab3d"
   secrets = ["DC_ID", "DC_TOKEN"]
-  needs = ["Deploy"]
+  needs = ["Not Master"]
   args = ["POST", "https://discordapp.com/api/webhooks/$DC_ID/$DC_TOKEN", "username=GitHub", "content='`hams-near-me` Tests Complete :tada: $GITHUB_SHA'"]
 }
