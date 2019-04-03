@@ -7,5 +7,5 @@ module.exports = {
     '\\.(s?css)$': '<rootDir>/test/__mocks__/styleMock.js'
   },
   roots: ['<rootDir>/src'],
-  setupTestFrameworkScriptFile: './test/setup.ts'
+  setupFilesAfterEnv: ['./test/setup.ts']
 }

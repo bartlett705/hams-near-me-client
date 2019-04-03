@@ -7,7 +7,7 @@
     "noImplicitThis": true,
     "sourceMap": true,
     "target": "es5",
-    "types": ["jest", "cypress"]
+    "types": ["jest"]
   },
 
   "exclude": ["node_modules", "build", "scripts", "test"]
