@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/bartlett705
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://hams-near-me.mosey.systems
+  * I am bartlett705 (https://keybase.io/bartlett705) on keybase.
+  * I have a public key ASCSYKYd-mlunkE0LOSG-gEeheb1dSEoWgwBxnCzAqyccAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101d88f69826294422625675e0e7e15aad752f3a1823976ee59b50b7a39580fcffa0a",
+      "host": "keybase.io",
+      "kid": "01209260a61dfa696e9e41342ce486fa011e85e6f57521285a0c01c670b302ac9c700a",
+      "uid": "04908f8d8875c2f808c0cb40814d8619",
+      "username": "bartlett705"
+    },
+    "merkle_root": {
+      "ctime": 1554268090,
+      "hash": "2587350f6d879707fa0e0167353e93de7840544cd21b275d466b3c0c89250ae8865900ffbe545d5f372f27265202777c54bf155743623694e6a12e2487de972c",
+      "hash_meta": "451b7a915a6d4d2e9283b7ad2359cd71bd6f733a671ebcd7c4578a6883c2cffe",
+      "seqno": 5084653
+    },
+    "service": {
+      "entropy": "nok8MmspiEKL8PrBY6B7CHa5",
+      "hostname": "hams-near-me.mosey.systems",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.1.2"
+  },
+  "ctime": 1554268221,
+  "expire_in": 504576000,
+  "prev": "248b1e50471b865a6bcdd131dc21281026bad23eb050c4170722dbe5ba66d86c",
+  "seqno": 27,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgkmCmHfppbp5BNCzkhvoBHoXm9XUhKFoMAcZwswKsnHAKp3BheWxvYWTESpcCG8QgJIseUEcbhlprzdEx3CEoECa60j6wUMQXByLb5bpm2GzEIMx/jwhHFt0RuoFCIPOezClF7niJ1vUtZPgKuJkhZiOnAgHCo3NpZ8RAJD08KZ/IXl1JdoDXvFB1JPtGg2D22vuBk5EkRpnViwwTnoMMkp3VK6p6BRjTry7TFBjRmWbG1ifxs2siny6NAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPqvmQ+7xGnZ6Ww4Ctv8RFxip1d4v7j9kcWX3/v0DNRro3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bartlett705
+
+==================================================================
