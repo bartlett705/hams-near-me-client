@@ -31,5 +31,5 @@ action "Notify End" {
   uses = "swinton/httpie.action@8ab0a0e926d091e0444fcacd5eb679d2e2d4ab3d"
   secrets = ["DC_ID", "DC_TOKEN"]
   needs = ["Deploy"]
-  args = ["POST", "https://discordapp.com/api/webhooks/$DC_ID/$DC_TOKEN", "username=GitHub", "content=`hams-near-me` Actions Complete :tada: $GITHUB_SHA'"]
+  args = ["POST", "https://discordapp.com/api/webhooks/$DC_ID/$DC_TOKEN", "username=GitHub", "content='`hams-near-me` Actions Complete :tada: $GITHUB_SHA'"]
 }
