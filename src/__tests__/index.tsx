@@ -20,7 +20,7 @@ it('renders an about link', () => {
   expect(link.getAttribute('href')).toBe('/about.html')
 })
 
-it('submits on clicking search and show loading state', () => {
+it('submits on clicking search and shows loading state', () => {
   const { getByLabelText, getByText } = render(<App />)
   global.fetch = jest.fn()
 
