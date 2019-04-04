@@ -1,10 +1,10 @@
 workflow "Master: test, build, deploy" {
-  resolves = ["Notify Deploy End"]
+  resolves = ["Notify Deploy End", "Notify Master Start"]
   on = "push"
 }
 
 workflow "Branch: test" {
-  resolves = ["Notify Test End"]
+  resolves = ["Notify Test End", "Notify Branch Start"]
   on = "push"
 }
 
