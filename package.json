@@ -13,6 +13,7 @@
     "deploy:ci": "scripts/deploy-ci.sh"
   },
   "dependencies": {
+    "@bartlett705/charcoal-client": "git+https://github.com/bartlett705/charcoal-client.git",
     "dotenv": "^6.1.0",
     "node-sass": "^4.7.2",
     "postcss-loader": "^3.0.0",

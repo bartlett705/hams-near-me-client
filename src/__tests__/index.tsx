@@ -4,6 +4,12 @@ import { App } from '../app'
 
 declare var global: any
 declare var jest: any
+// tslint:disable-next-line:no-console
+console.debug = () => undefined
+
+beforeEach(() => {
+  global.fetch = jest.fn(async () => ({ status: 200 }))
+})
 
 const pause = () => new Promise((r) => setTimeout(r))
 
@@ -22,7 +28,6 @@ it('renders an about link', () => {
 
 it('submits on clicking search and shows loading state', () => {
   const { getByLabelText, getByText } = render(<App />)
-  global.fetch = jest.fn()
 
   const input = getByLabelText(/zip code/i)
   fireEvent.change(input, { target: { value: '92034' } })
@@ -39,7 +44,7 @@ it('submits on clicking search and shows loading state', () => {
 
 it('validates short input', () => {
   const { getByLabelText, getByText } = render(<App />)
-  global.fetch = jest.fn()
+  global.fetch.mockReset()
 
   const input = getByLabelText(/zip code/i)
   fireEvent.change(input, { target: { value: '920' } })
@@ -52,7 +57,7 @@ it('validates short input', () => {
 
 it('validates long input', () => {
   const { getByLabelText, getByText } = render(<App />)
-  global.fetch = jest.fn()
+  global.fetch.mockReset()
 
   const input = getByLabelText(/zip code/i)
   fireEvent.change(input, { target: { value: '9203492034' } })
@@ -65,7 +70,7 @@ it('validates long input', () => {
 
 it('validates non numerical input', () => {
   const { getByLabelText, getByText } = render(<App />)
-  global.fetch = jest.fn()
+  global.fetch.mockReset()
 
   const input = getByLabelText(/zip code/i)
   fireEvent.change(input, { target: { value: 'pondelinp' } })

@@ -1,3 +1,4 @@
+import { HamsNearMeLocation, trackPageview } from '@bartlett705/charcoal-client'
 import * as React from 'react'
 import './index.scss'
 
@@ -35,6 +36,10 @@ interface State {
 }
 class HammerSearch extends React.Component {
   public state: State = { inputError: false, inputValue: '', working: false }
+  public componentDidMount() {
+    trackPageview({ location: HamsNearMeLocation.Front })
+  }
+
   public render() {
     return (
       <>
