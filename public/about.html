@@ -69,17 +69,10 @@
     </main>
   </body>
   <!-- 🙈 -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=UA-129773171-2"
-  ></script>
   <script>
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-
-    gtag('config', 'UA-129773171-2')
+    const stag = document.createElement('script')
+    stag.src = "https://chaitown.mosey.systems/charcoal-client/index.js"
+    stag.onload = () => window.trackPageview({ location: "hamsnearme.about" })
+    document.documentElement.appendChild(stag)
   </script>
 </html>
