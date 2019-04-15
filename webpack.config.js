@@ -14,16 +14,19 @@ const plugins = [
 
 if (!devMode) {
   plugins.push(
-    new CleanWebPackPlugin(['build'], {
-      root: path.resolve(__dirname),
-      verbose: true
-    }),
     new CopyWebpackPlugin([{ from: 'public/', to: '.' }]),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
     }),
   )
+}
+
+if (!devMode && !process.env.CI) {
+  plugins.push(new CleanWebPackPlugin(['build'], {
+    root: path.resolve(__dirname),
+    verbose: true
+  }))
 }
 
 module.exports = {
