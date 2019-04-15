@@ -34,7 +34,7 @@ action "Unit Tests" {
 action "Deploy" {
   needs = ["Filter master", "Unit Tests"]
   uses = "swinton/httpie.action@8ab0a0e926d091e0444fcacd5eb679d2e2d4ab3d"
-  args = ["POST", "https://mosey.systems/api/vanatu", "action=completed", "repository=undefined", "X-Hub-Signature:$HUB_SIGNATURE"]
+  args = ["POST", "https://mosey.systems/api/vanatu", "action=completed", "repository=hams-near-me-client", "X-Hub-Signature:$HUB_SIGNATURE"]
   secrets = ["HUB_SIGNATURE"]
 }
 
