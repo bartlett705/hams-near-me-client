@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production webpack",
+    "build:vanatu": "NODE_ENV=production webpack",
     "start": "webpack-dev-server",
     "test": "jest",
-    "deploy": "npm run-script build && scp -P 5235 build/*.* ahmad@mosey.systems:/var/www/hams-near-me/client/build",
-    "deploy:ci": "scripts/deploy-ci.sh"
+    "deploy": "npm run-script build && scp -P 5235 build/*.* ahmad@mosey.systems:/var/www/hams-near-me/client/build"
   },
   "dependencies": {
     "@bartlett705/charcoal-client": "git+https://github.com/bartlett705/charcoal-client.git",
