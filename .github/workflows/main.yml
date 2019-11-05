@@ -28,7 +28,7 @@ jobs:
       - name: Deploy
         env:
           HUB_SIGNATURE: ${{ secrets.HUB_SIGNATURE }}
-        run: curl -v https://mosey.systems/api/vanatu -X POST --data "action=completed&repository=hams-near-me" -H "X-Hub-Signature:$HUB_SIGNATURE"
+        run: curl -v https://mosey.systems/api/vanatu -X POST --data "action=completed&repository=hams-near-me-client" -H "X-Hub-Signature:$HUB_SIGNATURE"
       - name: Notify complete
         env:
           DC_ID: ${{ secrets.DC_ID }} 
