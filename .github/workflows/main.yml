@@ -1,0 +1,46 @@
+name: CI Master
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+     
+  deploy:
+    
+    name: Test and Deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1.1.0
+      - name: Notify start
+        env:
+          DC_ID: ${{ secrets.DC_ID }} 
+          DC_TOKEN: ${{ secrets.DC_TOKEN }}
+        run: curl https://discordapp.com/api/webhooks/$DC_ID/$DC_TOKEN -X POST --data "username=GitHub&content=\`$GITHUB_REPOSITORY $GITHUB_REF\` push received 👍 $GITHUB_SHA"
+      - name: Install
+        run: npm ci
+      - name: Unit Tests
+        run: npm t
+      - name: E2E Tests
+        env:
+           CYPRESS_NEWS_API_KEY: ${{ secrets. CYPRESS_NEWS_API_KEY }} 
+        run: npm run cy:run
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@master
+        with:
+          name: screenshots
+          path: /home/runner/work/hams-near-me-client/hams-near-me-client/cypress/screenshots
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        env:
+          HUB_SIGNATURE: ${{ secrets.HUB_SIGNATURE }}
+        run: curl -v https://mosey.systems/api/vanatu -X POST --data "action=completed&repository=hams-near-me" -H "X-Hub-Signature:$HUB_SIGNATURE"
+      - name: Notify complete
+        env:
+          DC_ID: ${{ secrets.DC_ID }} 
+          DC_TOKEN: ${{ secrets.DC_TOKEN }}
+        run: curl https://discordapp.com/api/webhooks/$DC_ID/$DC_TOKEN -X POST --data "username=GitHub&content=\`$GITHUB_REPOSITORY $GITHUB_REF\` deploy complete 🎉 $GITHUB_SHA"
+
